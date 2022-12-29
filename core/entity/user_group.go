@@ -1,6 +1,6 @@
 package entity
 
-import "hexagon-example/core/valueobj"
+import "go-hexagon-example/core/valueobj"
 
 type UserGroup interface {
 	Group() string

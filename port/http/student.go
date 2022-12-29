@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"hexagon-example/core/entity"
+	"go-hexagon-example/core/entity"
 )
 
 type RESTStudent struct {

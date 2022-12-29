@@ -3,7 +3,7 @@ package entity
 import (
 	"errors"
 
-	"hexagon-example/core/valueobj"
+	"go-hexagon-example/core/valueobj"
 )
 
 type User interface {

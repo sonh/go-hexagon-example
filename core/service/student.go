@@ -3,9 +3,9 @@ package service
 import (
 	"context"
 
-	"hexagon-example/core/aggregate"
-	"hexagon-example/core/entity"
-	"hexagon-example/pkg/auth"
+	"go-hexagon-example/core/aggregate"
+	"go-hexagon-example/core/entity"
+	"go-hexagon-example/pkg/auth"
 )
 
 type StudentRepo interface {

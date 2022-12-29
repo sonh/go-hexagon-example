@@ -1,6 +1,6 @@
 package aggregate
 
-import "hexagon-example/core/entity"
+import "go-hexagon-example/core/entity"
 
 type Student struct {
 	// aggregate root

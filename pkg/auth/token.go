@@ -3,7 +3,7 @@ package auth
 import (
 	"context"
 
-	"hexagon-example/core/valueobj"
+	"go-hexagon-example/core/valueobj"
 )
 
 type Token struct {
