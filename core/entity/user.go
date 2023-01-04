@@ -16,7 +16,7 @@ type MultiTenantUser interface {
 }
 
 type MultiTenantUserToDelegate struct {
-	MultiTenantUser
+	User
 	valueobj.HasOrgID // to override
 }
 

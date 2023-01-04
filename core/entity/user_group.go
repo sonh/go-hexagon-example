@@ -11,12 +11,12 @@ type UserGroup interface {
 }
 
 type MultiTenantUserGroup interface {
-	Group() string
+	UserGroup
 	valueobj.HasOrgID
 }
 
 type MultiTenantUserGroupToDelegate struct {
-	MultiTenantUserGroup
+	UserGroup
 	valueobj.HasOrgID
 }
 

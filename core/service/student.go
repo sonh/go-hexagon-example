@@ -23,12 +23,12 @@ func (service StudentService) Create(ctx context.Context, userData entity.MultiT
 	// student
 	student := &aggregate.Student{
 		MultiTenantUser: entity.MultiTenantUserToDelegate{
-			MultiTenantUser: userData,
-			HasOrgID:        org,
+			User:     userData,
+			HasOrgID: org,
 		},
 		UserGroup: entity.MultiTenantUserGroupToDelegate{
-			MultiTenantUserGroup: entity.StudentGroup{},
-			HasOrgID:             org,
+			UserGroup: entity.StudentGroup{},
+			HasOrgID:  org,
 		},
 	}
 
