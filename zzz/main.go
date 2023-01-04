@@ -1,9 +1,15 @@
 package main
 
-import "go-hexagon-example/core/entity"
+import (
+	"fmt"
+
+	"go-hexagon-example/core/entity"
+)
 
 func main() {
 	user := entity.MultiTenantUserToDelegate{
-		MultiTenantUser:
+		User:     nil,
+		HasOrgID: nil,
 	}
+	fmt.Println(user)
 }
