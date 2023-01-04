@@ -4,10 +4,10 @@ import "go-hexagon-example/core/entity"
 
 type Student struct {
 	// aggregate root
-	entity.User
+	entity.MultiTenantUser
 
 	// ...
-	UserGroup entity.UserGroup
+	UserGroup entity.MultiTenantUserGroup
 }
 
 func a() {

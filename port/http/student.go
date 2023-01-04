@@ -20,8 +20,8 @@ func (student RESTStudent) Email() string {
 }
 
 type DomainStudentService interface {
-	Create(ctx context.Context, user entity.User) error
-	Update(ctx context.Context, user entity.User) error
+	Create(ctx context.Context, user entity.MultiTenantUser) error
+	Update(ctx context.Context, user entity.MultiTenantUser) error
 }
 
 type StudentService struct {

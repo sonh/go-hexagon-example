@@ -16,19 +16,19 @@ type StudentService struct {
 	StudentRepo StudentRepo
 }
 
-func (service StudentService) Create(ctx context.Context, userData entity.User) error {
+func (service StudentService) Create(ctx context.Context, userData entity.MultiTenantUser) error {
 	// enforce
 	org := auth.GetOrgIDFromCtx(ctx)
 
 	// student
 	student := &aggregate.Student{
-		User: entity.UserToDelegate{
-			User:     userData,
-			HasOrgID: org,
+		MultiTenantUser: entity.MultiTenantUserToDelegate{
+			MultiTenantUser: userData,
+			HasOrgID:        org,
 		},
-		UserGroup: entity.UserGroupToDelegate{
-			UserGroup: entity.StudentGroup{},
-			HasOrgID:  org,
+		UserGroup: entity.MultiTenantUserGroupToDelegate{
+			MultiTenantUserGroup: entity.StudentGroup{},
+			HasOrgID:             org,
 		},
 	}
 

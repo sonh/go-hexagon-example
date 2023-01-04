@@ -8,7 +8,16 @@ import (
 
 type User interface {
 	Email() string
+}
+
+type MultiTenantUser interface {
+	User
 	valueobj.HasOrgID
+}
+
+type MultiTenantUserToDelegate struct {
+	MultiTenantUser
+	valueobj.HasOrgID // to override
 }
 
 type EmptyUser struct{}
@@ -21,12 +30,7 @@ func (e *EmptyUser) OrgID() string {
 	return ""
 }
 
-type UserToDelegate struct {
-	User
-	valueobj.HasOrgID // to override
-}
-
-func ValidUser(user User) error {
+func ValidUser(user MultiTenantUser) error {
 	if user.Email() == "" {
 		return errors.New("email can not be empty")
 	}

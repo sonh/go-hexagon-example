@@ -2,8 +2,21 @@ package entity
 
 import "go-hexagon-example/core/valueobj"
 
+const (
+	GroupStudent = "STUDENT"
+)
+
 type UserGroup interface {
 	Group() string
+}
+
+type MultiTenantUserGroup interface {
+	Group() string
+	valueobj.HasOrgID
+}
+
+type MultiTenantUserGroupToDelegate struct {
+	MultiTenantUserGroup
 	valueobj.HasOrgID
 }
 
@@ -16,15 +29,6 @@ func (s EmptyUserGroup) Group() string {
 func (s EmptyUserGroup) OrgID() string {
 	return ""
 }
-
-type UserGroupToDelegate struct {
-	UserGroup
-	valueobj.HasOrgID
-}
-
-const (
-	GroupStudent = "STUDENT"
-)
 
 type StudentGroup struct{}
 
