@@ -30,7 +30,7 @@ func (e *EmptyUser) OrgID() string {
 	return ""
 }
 
-func ValidUser(user MultiTenantUser) error {
+func ValidUser(user User) error {
 	if user.Email() == "" {
 		return errors.New("email can not be empty")
 	}
