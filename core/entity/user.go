@@ -8,7 +8,7 @@ import (
 
 type User interface {
 	Email() string
-	OrgID() string
+	valueobj.HasOrgID
 }
 
 type EmptyUser struct{}

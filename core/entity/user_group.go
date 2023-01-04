@@ -4,7 +4,7 @@ import "go-hexagon-example/core/valueobj"
 
 type UserGroup interface {
 	Group() string
-	OrgID() string
+	valueobj.HasOrgID
 }
 
 type EmptyUserGroup struct{}
